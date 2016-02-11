@@ -1,0 +1,121 @@
+extends layout
+
+block content
+  .container
+    input#teamId(type='hidden', value=team.id)
+    h1.ui.center.aligned.header
+      i.trophy.icon
+      | 修改隊伍-
+      = gameName
+    if editTeamMessage != ""
+      .ui.success.message= editTeamMessage
+    if editTeamErrorMessage != ""
+      .ui.error.message= editTeamErrorMessage
+    form#form-team.ui.form(method='post', action='/team/'+team.id+'/edit', enctype="multipart/form-data")
+      .field
+        a.ui.black.button(href='/team/dashboard') 返回
+        .ui.blue.submit.button 更新
+      .field
+        label 隊伍頭像(盡量使用200x200的圖像，否則會造成圖片變形)
+        if team.head != ""
+          img#uploadPreview(style="width: 100px; height: 100px;", src="/uploads/"+team.head)
+        else
+          img#uploadPreview(style="width: 100px; height: 100px;", src='/uploads/defaultPortrait.png')
+        br
+        input#uploadImage(type='file', name='headPic', onchange='PreviewImage();',accept="image/*")
+      .fields
+        .four.wide.field
+          label 遊戲類別
+          input(type='text', value=gameName, disabled)
+        .twelve.wide.required.field
+          label 隊伍名稱
+          input(type='text', name='name', autocomplete='off', placeholder='隊伍名稱', value=team.name)
+      .required.field
+        label 隊伍介紹
+        textarea(name='intro', placeholder='隊伍介紹')= team.intro
+      .ui.error.message
+      h2.ui.horizontal.header.divider
+        i.calendar.icon
+        | 初賽日期選擇
+      table.ui.celled.table
+        thead
+          tr
+            th 日期/時間
+            each time in tryout_times
+              th= time.time
+            th 全選
+        tbody
+          each day in tryout
+            tr
+              td= day.datetime
+              each time in tryout_times
+                td
+                  .ui.checkbox(tryout-row=day.index)
+                    - var index = day.index*tryout_times.length+time.index;
+                    input(type='checkbox', name='tryout', value=index, checked=(team.tryout[index] ? "checked" : undefined) )
+              td
+                .ui.icon.buttons
+                  .ui.blue.icon.checkall.button(tryout-row=day.index)
+                    i.checkmark.icon
+                  .ui.icon.uncheckall.button(tryout-row=day.index)
+                    i.remove.icon
+      h2.ui.horizontal.header.divider
+        i.calendar.icon
+        | 複賽日期選擇
+      table.ui.celled.table
+        thead
+          tr
+            th 日期/時間
+            each time in intermediary_times
+              th= time.time
+            th 全選
+        tbody
+          each day in intermediary
+            tr
+              td= day.datetime
+              each time in intermediary_times
+                td
+                  .ui.checkbox(inter-row=day.index)
+                    - var index = day.index*intermediary_times.length+time.index
+                    input(type='checkbox', name='intermediary', value=index, checked=(team.intermediary[index] ? "checked" : undefined))
+              td
+                .ui.icon.buttons
+                  .ui.blue.icon.checkall.button(inter-row=day.index)
+                    i.checkmark.icon
+                  .ui.icon.uncheckall.button(inter-row=day.index)
+                    i.remove.icon
+              
+
+    if team.game == 0 || team.game == 3
+      h2.ui.horizontal.header.divider
+        i.users.icon
+        | 隊員管理
+
+      .ui.form
+        .fields
+          .twelve.wide.field
+            input#newemail(type='email', name='email', placeholder='輸入Email')
+          .four.wide.field
+            #btn-add.ui.blue.button 新增隊員
+
+      #addmsg.ui.error.hidden.message
+        #errormsg.header 
+
+      table.ui.celled.striped.table
+        thead
+          tr
+            th 姓名
+            th 電子郵件
+            th 操作
+        tbody#table-member
+          each mem in team.member
+            tr
+              td.collapsing= mem.local.name
+              td= mem.local.email
+              td.right.aligned.collapsing
+                .ui.icon.red.remove.button(target=mem.id)
+                  i.trash.icon
+      
+block javascript
+  script(src='/js/team_edit.js')
+  script(src='/js/tabs.js')

@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  .container
+    h1.ui.center.aligned.header
+      i.trophy.icon
+      | 新建隊伍
+    if errorMessage != ""
+      .ui.error.message= errorMessage
+    .ui.warning.message
+      | 創立隊伍後則無法修改遊戲類別，請再三確認是否正確
+    form#form-team.ui.form(method='post', action='/team/new')
+      .field
+        a.ui.black.button(href='/team/dashboard') 返回
+        .ui.blue.submit.button 創立
+      .field
+        label 啟動碼
+        input(type='text', name='regcode', placeholder='啟動碼')
+      .fields
+        .four.wide.field
+          label 遊戲類別
+          .ui.selection.dropdown
+            input(type='hidden', name='gametype', value=game)
+            .default.text 遊戲類別
+            i.dropdown.icon
+            .menu
+              .item(data-value='0') 英雄聯盟
+              .item(data-value='1') 爐石戰記
+              .item(data-value='2') 星海爭霸2-蟲族之心
+              .item(data-value='3') 戰地之王
+        .twelve.wide.field
+          label 隊伍名稱
+          input(type='text', name='name', autocomplete='off', placeholder='隊伍名稱')
+      .field
+        label 隊伍介紹
+        textarea(name='intro', placeholder='隊伍介紹')
+      .ui.error.message
+block javascript
+  script(src='/js/team.js')

@@ -1,0 +1,135 @@
+extends layout
+
+block content
+  .container
+    h1.ui.center.aligned.header
+      i.sitemap.icon
+      | 組隊系統
+    .ui.items
+      .item
+        .image
+          img(src='/img/lol_team.jpg')
+        .content
+          .header 英雄聯盟
+          .meta
+            span.cinema League of Legend
+          .description
+            if team.lol && (!user.local.lolid || user.local.lolid.length <= 0 || !user.local.lolgpid || user.local.lolgpid.length <= 0 || !user.local.loluid || user.local.loluid.length <= 0)
+              .ui.warning.message
+                | 請記得填寫遊戲相關資料，
+                a(href='/user/'+user.id+'/edit#lolid') 前往設定
+            .ui.segment
+              if team.lol
+                h4.ui.header= "隊伍名稱：" + team.lol.name
+                h4.ui.header
+                  | 隊長：
+                  a.ui.blue.horizontal.label(href='/user/'+team.lol.leader.id)= team.lol.leader.local.name
+                h4.ui.header
+                  | 隊員：
+                  each mem in team.lol.member
+                    if mem.id == user.id
+                      a.ui.horizontal.green.label(href='/user/'+mem.id)= mem.local.name
+                    else
+                      a.ui.horizontal.label(href='/user/'+mem.id)= mem.local.name
+                  if team.lol.member.length == 0
+                    | 無
+              else
+                | 尚未加入隊伍
+            if team.lol
+              if team.lol.leader.id == user.id
+                a.ui.right.floated.green.button(href='/team/'+team.lol.id+'/edit') 編輯隊伍
+              else
+                a.ui.right.floated.red.button(href='/team/'+team.lol.id+'/unlink') 退出組隊
+              a.ui.right.floated.button(href='/team/'+team.lol.id) 隊伍公開頁面
+            else
+              a.ui.right.floated.blue.button(href='/team/new?gametype=lol') 創立隊伍
+
+      .item
+        .image
+          img(src='/img/hs_team.jpg')
+        .content
+          .header 爐石戰記
+          .meta
+            span.cinema Hearth of Stone
+          .description
+            if team.hs && (!user.local.hsid || user.local.hsid.length <= 0 || !user.local.hsladder || user.local.hsladder.length <= 0)
+              .ui.warning.message
+                | 請記得填寫遊戲相關資料，
+                a(href='/user/'+user.id+'/edit#hsid') 前往設定
+            .ui.segment
+              if team.hs
+                h4.ui.header= "隊伍名稱：" + team.hs.name
+                h4.ui.header
+                  | 隊長：
+                  a.ui.blue.horizontal.label(href='/user/'+team.hs.leader.id)= team.hs.leader.local.name
+              else
+                | 尚未加入隊伍
+            if team.hs
+              a.ui.right.floated.green.button(href='/team/'+team.hs.id+'/edit') 編輯隊伍
+              a.ui.right.floated.button(href='/team/'+team.hs.id) 隊伍公開頁面
+            else
+              a.ui.right.floated.blue.button(href='/team/new?gametype=hs') 創立隊伍
+
+      .item
+        .image
+          img(src='/img/sc2_team.jpg')
+        .content
+          .header 星海爭霸2: 蟲族之心
+          .meta
+            span.cinema Starcraft 2: Heart of Swarm
+          .description
+            if team.sc2 && (!user.local.sc2id || user.local.sc2id.length <= 0 || !user.local.sc2ladder || user.local.sc2ladder.length <= 0)
+              .ui.warning.message
+                | 請記得填寫遊戲相關資料，
+                a(href='/user/'+user.id+'/edit#sc2id') 前往設定
+            .ui.segment
+              if team.sc2
+                h4.ui.header= "隊伍名稱：" + team.sc2.name
+                h4.ui.header
+                  | 隊長：
+                  a.ui.blue.horizontal.label(href='/user/'+team.sc2.leader.id)= team.sc2.leader.local.name
+              else
+                | 尚未加入隊伍
+            if team.sc2
+              a.ui.right.floated.green.button(href='/team/'+team.sc2.id+'/edit') 編輯隊伍
+              a.ui.right.floated.button(href='/team/'+team.sc2.id) 隊伍公開頁面
+            else
+              a.ui.right.floated.blue.button(href='/team/new?gametype=sc2') 創立隊伍
+
+      .item
+        .image
+          img(src='/img/ava_team.jpg')
+        .content
+          .header 戰地之王
+          .meta
+            span.cinema AVA
+          .description
+            if team.ava && (!user.local.avaid || user.local.avaid.length <= 0 || !user.local.avagpid || user.local.avagpid.length <= 0 || !user.local.avauid || user.local.avauid.length <= 0)
+              .ui.warning.message
+                | 請記得填寫遊戲相關資料，
+                a(href='/user/'+user.id+'/edit#avaid') 前往設定
+            .ui.segment
+              if team.ava
+                h4.ui.header= "隊伍名稱：" + team.ava.name
+                h4.ui.header
+                  | 隊長：
+                  a.ui.blue.horizontal.label(href='/user/'+team.ava.leader.id)= team.ava.leader.local.name
+                h4.ui.header
+                  | 隊員：
+                  each mem in team.ava.member
+                    if mem.id == user.id
+                      a.ui.horizontal.green.label(href='/user/'+mem.id)= mem.local.name
+                    else
+                      a.ui.horizontal.label(href='/user/'+mem.id)= mem.local.name
+                  if team.ava.member.length == 0
+                    | 無
+              else
+                | 尚未加入隊伍
+            if team.ava
+              if team.ava.leader.id == user.id
+                a.ui.right.floated.green.button(href='/team/'+team.ava.id+'/edit') 編輯隊伍
+              else
+                a.ui.right.floated.red.button(href='/team/'+team.ava.id+'/unlink') 退出組隊
+              a.ui.right.floated.button(href='/team/'+team.ava.id) 隊伍公開頁面
+            else
+              a.ui.right.floated.blue.button(href='/team/new?gametype=ava') 創立隊伍

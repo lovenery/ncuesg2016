@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  .container
+    h1.ui.center.aligned.header
+      i.announcement.icon
+      | 新增公告
+    form#form-ann.ui.form(method='post', action='/announcement/new')
+      .field
+        a.ui.black.button(href='/announcement') 返回
+        .ui.blue.submit.button 新增
+      .fields
+        .four.wide.field
+          label 公告層級
+          .ui.selection.dropdown
+            input(type='hidden', name='level')
+            .default.text 公告層級
+            i.dropdown.icon
+            .menu
+              .item(data-value='0') 一般公告
+              .item(data-value='1') 重要公告
+        .twelve.wide.field
+          label 公告標題
+          input(type='text', name='title', autocomplete="off",placeholder='公告標題')
+      .ui.message
+        .header 公告內文可用的HTML標籤
+        .content &lt;a&gt;&lt;h3~h5&gt;&lt;strong&gt;&lt;i&gt;&lt;ul&gt;&lt;li&gt;
+      .field
+        label 公告內文
+        textarea(name='content', placeholder='公告內文')
+      .ui.error.message
+
+block javascript
+  script(src='/js/announcement.js')

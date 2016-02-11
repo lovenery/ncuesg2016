@@ -1,0 +1,11 @@
+body {
+  background: #1b1c1d;
+}
+
+#login {
+  width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 5px 50px 20px 50px;
+  box-sizing: content-box;
+}

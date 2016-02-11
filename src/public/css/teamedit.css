@@ -1,0 +1,36 @@
+.content-wrapper {
+  padding: 30px 0;
+}
+.section-team {
+  padding: 15px 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  width: 800px;
+  margin: 0 auto;
+}
+
+#membertable {
+  width: 100%;
+}
+
+.member-edit {
+  margin-top: 20px;
+}
+
+.member {
+  margin-top: 20px;
+}
+
+#newemail {
+  width: 200px;
+  margin-right: 10px; 
+  display: inline-block;
+}
+
+#updateinfomsg {
+  margin-left: 10px;
+}
+
+#addmembermsg {
+  margin-left: 10px;
+}

@@ -1,0 +1,24 @@
+extends layout
+
+block stylesheet
+  link(rel='stylesheet', href='/css/login.css')
+
+block content
+  #login
+    h1 登入 中央電競大賽
+    p 你必須登入之後才可以參加相關比賽
+    .ui.breadcrumb
+      .active.section 登入
+      .divider /
+      a.section(href='/register') 註冊
+    if error != ""
+      .ui.error.message= error
+    form.ui.form(method='post', action='/login')
+      label 電子郵件
+      .field
+        input(type='email', name='email', placeholder='電子郵件', required)
+      label 密碼
+      .field
+        input(type='password', name='password', placeholder='密碼', required)
+      .field
+        input.ui.submit.button(type='submit', value='登入')

@@ -1,0 +1,129 @@
+extends layout
+
+block content
+  .container
+    h1.ui.center.aligned.header
+      i.settings.icon
+      | 帳號設定
+    if successMessage != ""
+      .ui.success.message= successMessage
+    if errorMessage != ""
+      .ui.error.message= errorMessage
+    form#form-user.ui.form(method='post', action='/user/'+toedit.id+'/edit')
+      .field
+        label 電子郵件
+        input(type='email', name='email', placeholder='電子郵件', value=toedit.local.email, disabled)
+      .two.fields
+        .field
+          label 新密碼
+          input(type='password', name='newpassword', placeholder='新密碼')
+        .field
+          label 請再次輸入你的新密碼
+          input(type='password', name='newpassword2', placeholder='請再次輸入你的新密碼')
+
+      .ui.horizontal.divider 個人資訊
+
+      .field
+        label 姓名
+        input(type='text', name='name', placeholder='姓名', value=toedit.local.name)
+      .two.fields
+        .field
+          label 系所
+          .ui.selection.dropdown
+            input(type='hidden', name='department', value=toedit.local.department)
+            .default.text 系所
+            i.dropdown.icon
+            .menu
+              .item(data-value="1") 校外人士
+              .item(data-value="2") 中國文學系
+              .item(data-value="3") 英美語文學系
+              .item(data-value="4") 法國語文學系
+              .item(data-value="5") 理學院學士班
+              .item(data-value="6") 物理學系
+              .item(data-value="7") 數學系
+              .item(data-value="8") 化學學系
+              .item(data-value="9") 生命科學系
+              .item(data-value="10") 光電科學與工程學系
+              .item(data-value="11") 化學工程與材料工程學系
+              .item(data-value="12") 土木工程學系
+              .item(data-value="13") 機械工程學系
+              .item(data-value="14") 企業管理學系
+              .item(data-value="15") 資訊管理學系
+              .item(data-value="16") 財務金融學系
+              .item(data-value="17") 經濟學系
+              .item(data-value="18") 電機工程學系
+              .item(data-value="19") 資訊工程學系
+              .item(data-value="20") 通訊工程學系
+              .item(data-value="21") 地球科學學系
+              .item(data-value="22") 大氣科學學系
+        .field
+          label 年級
+          .ui.selection.dropdown
+            input(type='hidden', name='grade', value=toedit.local.grade)
+            .default.text 年級
+            i.dropdown.icon
+            .menu
+              .item(data-value="1") 1年級
+              .item(data-value="2") 2年級
+              .item(data-value="3") 3年級
+              .item(data-value="4") 4年級
+              .item(data-value="5") 碩士
+              .item(data-value="6") 博士
+      .two.fields
+        .field
+          label 手機號碼
+          input(type='text', name='phone', placeholder='手機號碼', value=toedit.local.phone)
+        .field
+          label 學號
+          input(type='text', name='studentid', placeholder='學號', value=toedit.local.studentid)
+
+      .ui.horizontal.divider 遊戲資訊
+      .ui.info.message(style="display: block;")
+        | 有參加該項遊戲須填寫，若無則留空
+
+      h5.ui.header(style='margin:0;') 英雄聯盟帳號：
+      .three.fields
+        .field
+          label 競時通帳號
+          input#lolid(type='text', name='lolgpid', placeholder='競時通帳號', value=toedit.local.lolgpid)
+        .field
+          label 召喚師ID
+          input(type='text', name='lolid', placeholder='召喚師ID', value=toedit.local.lolid)
+        .field
+          label UID
+          input(type='text', name='loluid', placeholder='UID', value=toedit.local.loluid)
+
+      .two.fields
+        .field
+          label 爐石戰記 BattleTag
+          input#hsid(type='text', name='hsid', placeholder='爐石戰記 BattleTag', value=toedit.local.hsid)
+        .field
+          label 排名模式階級
+          input(type='text', name='hsladder', placeholder='排名模式階級', value=toedit.local.hsladder)
+
+      .two.fields
+        .field
+          label 星海爭霸II：蟲族之心 BattleTag
+          input#sc2id(type='text', name='sc2id', placeholder='星海爭霸II：蟲族之心 BattleTag', value=toedit.local.sc2id)
+        .field
+          label 天梯階級
+          input(type='text', name='sc2ladder', placeholder='天梯階級', value=toedit.local.sc2ladder)
+          
+      h5.ui.header(style='margin:0;') AVA戰地之王帳號：
+      .three.fields
+        .field
+          label 競時通帳號
+          input#avaid(type='text', name='avagpid', placeholder='競時通帳號', value=toedit.local.avagpid)
+        .field
+          label 玩家ID
+          input(type='text', name='avaid', placeholder='玩家ID', value=toedit.local.avaid)
+        .field
+          label UID
+          input(type='text', name='avauid', placeholder='UID', value=toedit.local.avauid)
+
+
+      #btn-submit.ui.blue.submit.button 更新帳號設定
+      .ui.error.message
+
+block javascript
+  script(src='/js/user_edit.js')

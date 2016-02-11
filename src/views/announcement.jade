@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .container
+    h1.ui.center.aligned.header
+      i.announcement.icon
+      | 公告事項
+    if user && user.local.level > 0
+      a.ui.blue.button(href='/announcement/new') 新增公告
+    .ui.horizontal.divider 公告列表
+    .ui.styled.fluid.accordion
+      each ann in announcements
+        .title(class=(show==ann.id?"active":""))
+          i.dropdown.icon
+          if ann.level == 1
+            span.ui.purple.label 重要
+          = ' '+ann.title + ' - '  + ann.created.getFullYear() + "/" + (ann.created.getMonth()+1) + "/" + ann.created.getDate()
+        .content(class=(show==ann.id?"active":""))
+          p !{ann.content.replace(/\n/g, '<br/>')}
+          if user && user.local.level > 0
+            .ui.horizontal.divider 選項
+            a.ui.black.button(href='/announcement/' + ann.id + '/edit') 編輯
+            a.ui.red.button(href='/announcement/' + ann.id + '/delete') 刪除
+
+block javascript
+  script $('.ui.accordion').accordion();
