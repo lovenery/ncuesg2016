@@ -9,7 +9,8 @@ var gameList = [
   "英雄聯盟",
   "爐石戰記：魔獸英雄傳",
   "星海爭霸II：蟲族之心",
-  "AVA戰地之王"
+  "AVA戰地之王",
+  "英雄聯盟-中路單挑"
 ];
 var timeList = [
     "2015-03-23 18:00:00",
@@ -161,6 +162,13 @@ router.get('/', function(req, res) {
           cb(null, com);
         });
       },
+      lolscomps: function(cb) {
+        var qlols = query;
+        qlols.gametype=4;
+        Competition.find(qlols).sort({'time': 1}).populate('team1').populate('team2').exec(function(err, com) {
+          cb(null, com);
+        });
+      },
     },
     function(err, result) {
       res.render('competitions', {
@@ -169,6 +177,7 @@ router.get('/', function(req, res) {
         hscomps: result.hscomps,
         sc2comps: result.sc2comps,
         avacomps: result.avacomps,
+        lolscomps: result.lolscomps,
         finished: finished,
         times: timeList
       });

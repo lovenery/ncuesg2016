@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var competitionSchema = mongoose.Schema({
-  gametype: Number, // gametype 0 ~ 3
+  gametype: Number, // gametype 0 ~ 4
   comp_type: Number, // competition type: 0 ~ 2
   team1: {type: mongoose.Schema.Types.ObjectId, ref: 'Team'},
   team2: {type: mongoose.Schema.Types.ObjectId, ref: 'Team'},

@@ -13,11 +13,11 @@ var teamSchema = mongoose.Schema({
 });
 
 teamSchema.methods.isFull = function() {
-  // lol, hs, sc, ava
-  // 0  , 1 , 2 , 3
+  // lol, hs, sc, ava , lols
+  // 0  , 1 , 2 , 3 , 4
   if ((this.game == 0 || this.game == 3) && this.member.length >= 5) 
     return "隊伍已經滿了";
-  if (this.game == 1 || this.game == 2)
+  if (this.game == 1 || this.game == 2 ||  this.game == 4)
     return "only one player allowed";
   return false;
 }

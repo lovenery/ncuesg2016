@@ -13,7 +13,8 @@ var gameList = [
   "英雄聯盟",
   "爐石戰記：魔獸英雄傳",
   "星海爭霸II：蟲族之心",
-  "AVA戰地之王"
+  "AVA戰地之王",
+  "英雄聯盟-中路單挑"
 ];
 
 var departmentList = [
@@ -113,6 +114,11 @@ router.get('/', function(req, res) {
           cb(null, team);
         });
       },
+      lolsTeams: function(cb) {
+        Team.find({'game':4}).populate('leader').populate('member').exec(function(err, team) {
+          cb(null, team);
+        });
+      },
     },
     function(err, result) {
       res.render('teams', {
@@ -120,7 +126,8 @@ router.get('/', function(req, res) {
         lolTeams: result.lolTeams,
         hsTeams: result.hsTeams,
         sc2Teams: result.scTeams,
-        avaTeams: result.avaTeams
+        avaTeams: result.avaTeams,
+        lolsTeams: result.lolsTeams
       });
     }
   );
@@ -160,6 +167,7 @@ router.get('/new', isLoggedIn, function(req, res) {
   if (game === 'hs') gametype = 1;
   else if (game === 'sc2') gametype = 2;
   else if (game === 'ava') gametype = 3;
+  else if (game === 'lols') gametype = 4;
   res.render('team_new', {
     user: req.user,
     game: gametype,
@@ -420,7 +428,7 @@ router.post('/:id/kick', isLoggedIn, isAdmin, function(req, res) {
 });
 
 router.get('/:id/edit', isLoggedIn, isAdmin, function(req, res) {
-  var gameToName = ['英雄聯盟', '爐石戰記', '星海爭霸2-蟲族之心', 'AVA戰地之王'];
+  var gameToName = ['英雄聯盟', '爐石戰記', '星海爭霸2-蟲族之心', 'AVA戰地之王' , '英雄聯盟-中路單挑'];
   res.render('team_edit', {
     user: req.user,
     team: req.authTeam,
@@ -437,12 +445,12 @@ router.get('/:id/edit', isLoggedIn, isAdmin, function(req, res) {
 
 router.post('/new', isLoggedIn, function(req, res) {
   // check if this user has joined req.body.gametype
-  var gametypeToString = ['lol', 'hs', 'sc2', 'ava'];
+  var gametypeToString = ['lol', 'hs', 'sc2', 'ava' , 'lols'];
   if (req.user.local.team[req.body.gametype] != undefined) {
     req.flash('newteamMessage', '你已經在此遊戲有加入隊伍了');
     res.redirect('/team/new?gametype='+gametypeToString[req.body.gametype]);
     return;
-  } else if (req.body.gametype >= 0 && req.body.gametype <= 3) {
+  } else if (req.body.gametype >= 0 && req.body.gametype <= 4) {
     Code.findById(req.body.regcode, function(err, code) {
       if (err || !code || code.used == true || !priceCheck(req.body.gametype, code.price)) {
         req.flash('newteamMessage', '啟動碼錯誤');
@@ -516,7 +524,7 @@ router.post('/:id/addmember', isLoggedIn, isAdmin, function(req, res) {
 
 router.get('/all/:game', isStaff, function(req, res) {
   var gametype = 0;
-  if (req.params.game && req.params.game >=0 && req.params.game <= 3) {
+  if (req.params.game && req.params.game >=0 && req.params.game <= 4) {
     gametype = req.params.game;
   }
   Team.find({'game':gametype}).populate('leader').populate('member').exec(function(err, teams) {
@@ -564,7 +572,7 @@ function isAdmin(req, res, next) {
 }
 
 function priceCheck(gametype, price) {
-  var priceTable = [250, 50, 50, 250];
+  var priceTable = [250, 50, 50, 250 , 50];
   return priceTable[gametype] == price;
 }
 

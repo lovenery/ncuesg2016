@@ -3,6 +3,7 @@ $(function() {
   var hsAnim = new countUp("hsTeamsCount", 0, $('#hsTeamsCount').attr('data-max'));
   var sc2Anim = new countUp("sc2TeamsCount", 0, $('#sc2TeamsCount').attr('data-max'));
   var avaAnim = new countUp("avaTeamsCount", 0, $('#avaTeamsCount').attr('data-max'));
+  var lolsAnim = new countUp("lolsTeamsCount", 0, $('#lolsTeamsCount').attr('data-max'));
   var userAnim = new countUp("userCount", 0, $('#userCount').attr('data-max'));
   setTimeout(function() {
     $('.statistic').transition('scale');
@@ -11,6 +12,7 @@ $(function() {
       hsAnim.start();
       sc2Anim.start();
       avaAnim.start();
+      lolsAnim.start();
       userAnim.start();
     }, 500);
   }, 1000);

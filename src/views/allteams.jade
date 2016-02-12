@@ -18,6 +18,27 @@ block content
         if game == 2
           h2.ui.header= "BattleTag: " + team.leader.local.sc2id
           h2.ui.header= "排名: " + team.leader.local.sc2ladder
+        if game == 4
+          h2.ui.header 基本資料表
+          table.ui.celled.table
+            thead
+              tr
+                th department
+                th 姓名
+                th Email
+                th 遊戲ID
+                th 競時通帳號
+                th UID
+            tbody
+              tr
+                td= departmentToName[team.leader.local.department] + gradeToName[team.leader.local.grade]
+                td
+                  i.trophy.icon
+                  = team.leader.local.name
+                td= team.leader.local.email
+                td= team.leader.local.lolid
+                td= team.leader.local.lolgpid
+                td= team.leader.local.loluid
         if game == 0 || game == 3
           h2.ui.header 基本資料表
           table.ui.celled.table

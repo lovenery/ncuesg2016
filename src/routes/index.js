@@ -30,6 +30,11 @@ module.exports = function(passport) {
             cb(null, team);
           });
         },
+        lolsTeamsCount: function(cb) {
+          Team.count({'game':4}).exec(function(err, team) {
+            cb(null, team);
+          });
+        },
         userCount: function(cb) {
           User.count({}).exec(function(err, c) {
             cb(null,c);
@@ -56,7 +61,8 @@ module.exports = function(passport) {
           lolTeamsCount: result.lolTeamsCount,
           hsTeamsCount: result.hsTeamsCount,
           sc2TeamsCount: result.sc2TeamsCount,
-          avaTeamsCount: result.avaTeamsCount
+          avaTeamsCount: result.avaTeamsCount,
+          lolsTeamsCount: result.lolsTeamsCount
         });
       }
     );

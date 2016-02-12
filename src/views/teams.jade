@@ -10,6 +10,7 @@ block content
       a.item(data-tab='hs') 爐石戰記：魔獸英雄傳
       a.item(data-tab='sc2') 星海爭霸II：蟲族之心
       a.item(data-tab='ava') AVA戰地之王
+      a.item(data-tab='lols') 英雄聯盟-中路單挑
     .ui.bottom.attached.active.tab.segment(data-tab='lol')
       table.ui.table
         thead
@@ -60,6 +61,20 @@ block content
             th 隊長
         tbody
           each team in avaTeams
+            tr
+              td
+                i.users.icon
+                a(href='/team/'+team.id)= team.name
+              td
+                a(href='/user/'+team.leader.id)= team.leader.local.name
+    .ui.bottom.attached.tab.segment(data-tab='lols')
+      table.ui.table
+        thead
+          tr
+            th 隊伍名稱
+            th 隊長
+        tbody
+          each team in lolsTeams
             tr
               td
                 i.users.icon
