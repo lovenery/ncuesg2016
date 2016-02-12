@@ -262,6 +262,15 @@ router.get('/dashboard', isLoggedIn, function(req, res) {
           });
         }
       },
+      lols: function(cb) {
+        if (req.user.local.team[4] == null) {
+          cb(null, false);
+        } else {
+          Team.findById(req.user.local.team[4]).populate('leader').populate('member').exec(function(err, team) {
+            cb(null, team);
+          });
+        }
+      },
     },
     function(err, result) {
       res.render('dashboard', {
