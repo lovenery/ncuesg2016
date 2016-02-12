@@ -8,7 +8,7 @@ var User = require('../models/user');
 var gameList = [
   "英雄聯盟",
   "爐石戰記：魔獸英雄傳",
-  "星海爭霸II：蟲族之心",
+  "星海爭霸II：虛空之遺",
   "AVA戰地之王",
   "英雄聯盟-中路單挑"
 ];

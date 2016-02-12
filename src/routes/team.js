@@ -12,7 +12,7 @@ var maxFileSize = 1024*1024;
 var gameList = [
   "英雄聯盟",
   "爐石戰記：魔獸英雄傳",
-  "星海爭霸II：蟲族之心",
+  "星海爭霸II：虛空之遺",
   "AVA戰地之王",
   "英雄聯盟-中路單挑"
 ];
@@ -437,7 +437,7 @@ router.post('/:id/kick', isLoggedIn, isAdmin, function(req, res) {
 });
 
 router.get('/:id/edit', isLoggedIn, isAdmin, function(req, res) {
-  var gameToName = ['英雄聯盟', '爐石戰記', '星海爭霸2-蟲族之心', 'AVA戰地之王' , '英雄聯盟-中路單挑'];
+  var gameToName = ['英雄聯盟', '爐石戰記', '星海爭霸2-虛空之遺', 'AVA戰地之王' , '英雄聯盟-中路單挑'];
   res.render('team_edit', {
     user: req.user,
     team: req.authTeam,
