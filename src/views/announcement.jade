@@ -5,7 +5,7 @@ block content
     h1.ui.center.aligned.header
       i.announcement.icon
       | 公告事項
-    if user && user.local.level > 0
+    if user && user.local.level >= 10
       a.ui.blue.button(href='/announcement/new') 新增公告
     .ui.horizontal.divider 公告列表
     .ui.styled.fluid.accordion
