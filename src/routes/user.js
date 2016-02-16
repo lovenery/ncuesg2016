@@ -66,7 +66,8 @@ router.get('/:id', function(req, res) {
         "lol.png",
         "hs.jpg",
         "sc2.png",
-        "ava.jpg"
+        "ava.jpg",
+        "lols.png"
       ]
     });
   });
