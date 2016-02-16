@@ -88,6 +88,12 @@ module.exports = function(passport) {
       user: req.user
     });
   });
+  router.get('/rules/lols', function(req, res) {
+    res.render('rules_lols', {
+      title: '大賽規則-英雄聯盟-中路單挑大賽',
+      user: req.user
+    });
+  });
   router.get('/rules/hs', function(req, res) {
     res.render('rules_hs', {
       title: '大賽規則-爐石戰記',
