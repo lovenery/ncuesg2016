@@ -81,7 +81,8 @@ html
                         i.log.out.icon
                         | 登出
                 else
-                  a.item(href='/login') 登入
+                  .item
+                    .ui.button(onclick="location.href='/login'") 登入
                   .item
                     .primary.animated.fade.ui.button
                       a.visible.content(href='/register') 註冊
