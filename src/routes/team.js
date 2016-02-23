@@ -54,40 +54,39 @@ var gradeList = [
 ];
 
 var tryout= [
-      {index: 0, datetime: "3/23(一)"},
-      {index: 1, datetime: "3/24(二)"},
-      {index: 2, datetime: "3/25(三)"},
-      {index: 3, datetime: "3/26(四)"},
-      {index: 4, datetime: "3/27(五)"},
-      {index: 5, datetime: "3/28(六)"},
-      {index: 6, datetime: "3/29(日)"},
-      {index: 7, datetime: "3/30(一)"},
-      {index: 8, datetime: "3/31(二)"}
+      {index: 0, datetime: "3/7(一)"},
+      {index: 1, datetime: "3/8(二)"},
+      {index: 2, datetime: "3/9(三)"},
+      {index: 3, datetime: "3/10(四)"},
+      {index: 4, datetime: "3/11(五)"},
+      {index: 5, datetime: "3/12(六)"},
+      {index: 6, datetime: "3/13(日)"},
+      {index: 7, datetime: "3/14(一)"},
+      {index: 8, datetime: "3/15(二)"}
     ],
     tryout_times= [
-      {index: 0, time: "18:00"},
-      {index: 1, time: "19:00"},
-      {index: 2, time: "20:00"},
-      {index: 3, time: "21:00"},
-      {index: 4, time: "22:00"},
-      {index: 5, time: "23:00"}
+      {index: 0, time: "19:00"},
+      {index: 1, time: "20:00"},
+      {index: 2, time: "21:00"},
+      {index: 3, time: "22:00"},
+      {index: 4, time: "23:00"}
     ],
     intermediary= [
-      {index: 0, datetime: "4/1(三)"},
-      {index: 1, datetime: "4/2(四)"},
-      {index: 2, datetime: "4/7(二)"},
-      {index: 3, datetime: "4/8(三)"},
-      {index: 4, datetime: "4/9(四)"}
+      {index: 0, datetime: "3/17(四)"},
+      {index: 1, datetime: "3/18(五)"},
+      {index: 2, datetime: "3/19(六)"},
+      {index: 3, datetime: "3/20(日)"},
+      {index: 4, datetime: "3/21(一)"},
+      {index: 5, datetime: "3/22(二)"},
+      {index: 6, datetime: "3/23(三)"},
+      {index: 7, datetime: "3/24(四)"}
     ],
     intermediary_times= [
-      {index: 0, time: "17:00"},
-      {index: 1, time: "18:00"},
-      {index: 2, time: "19:00"},
-      {index: 3, time: "20:00"},
-      {index: 4, time: "21:00"},
-      {index: 5, time: "22:00"},
-      {index: 6, time: "23:00"},
-      {index: 7, time: "24:00"}
+      {index: 0, time: "19:00"},
+      {index: 1, time: "20:00"},
+      {index: 2, time: "21:00"},
+      {index: 3, time: "22:00"},
+      {index: 4, time: "23:00"}
     ];
 
 router.get('/', function(req, res) {
@@ -201,7 +200,7 @@ router.post('/:id/edit', isLoggedIn, isAdmin, uploadHead, function(req, res) {
   if (req.uploadedName != undefined) {
     req.authTeam.head = req.uploadedName;
   }
-  req.authTeam.tryout = Array.apply(null, Array(54)).map(function() {return false;});
+  req.authTeam.tryout = Array.apply(null, Array(45)).map(function() {return false;});
   req.authTeam.intermediary = Array.apply(null, Array(40)).map(function() {return false;});
   var tryout = req.body.tryout;
   var intermediary = req.body.intermediary;
@@ -471,7 +470,7 @@ router.post('/new', isLoggedIn, function(req, res) {
         newTeam.intro = sanitize(req.body.intro);
         newTeam.leader = req.user;
         newTeam.head = "";
-        newTeam.tryout = Array.apply(null, Array(54)).map(function() {return true;});
+        newTeam.tryout = Array.apply(null, Array(45)).map(function() {return true;});
         newTeam.intermediary = Array.apply(null, Array(40)).map(function() {return true;});
         newTeam.save(function(err, team) {
 
