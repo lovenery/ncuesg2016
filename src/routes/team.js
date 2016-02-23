@@ -177,7 +177,8 @@ router.get('/new', isLoggedIn, function(req, res) {
 
 
 var uploadHead = multer({
-  dest: './public/uploads',
+  dest: './src/public/uploads/',
+  //dest: './public/uploads',
   onFileUploadStart: function (file, req, res) {
     console.log(file.fieldname + ' is starting ...');
     if (file.extension != 'jpg' &&
