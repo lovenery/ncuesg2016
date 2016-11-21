@@ -54,15 +54,18 @@ var gradeList = [
 ];
 
 var tryout= [
-      {index: 0, datetime: "3/7(一)"},
-      {index: 1, datetime: "3/8(二)"},
-      {index: 2, datetime: "3/9(三)"},
-      {index: 3, datetime: "3/10(四)"},
-      {index: 4, datetime: "3/11(五)"},
-      {index: 5, datetime: "3/12(六)"},
-      {index: 6, datetime: "3/13(日)"},
-      {index: 7, datetime: "3/14(一)"},
-      {index: 8, datetime: "3/15(二)"}
+      {index: 0, datetime: "11/28(一)"},
+      {index: 1, datetime: "11/29(二)"},
+      {index: 2, datetime: "11/30(三)"},
+      {index: 3, datetime: "12/1(四)"},
+      {index: 4, datetime: "12/2(五)"},
+      {index: 5, datetime: "12/3(六)"},
+      {index: 6, datetime: "12/4(日)"},
+      {index: 7, datetime: "12/5(一)"},
+      {index: 8, datetime: "12/6(二)"},
+      {index: 9, datetime: "12/7(三)"},
+      {index: 10, datetime: "12/8(四)"},
+      {index: 11, datetime: "12/9(五)"},
     ],
     tryout_times= [
       {index: 0, time: "19:00"},
@@ -72,14 +75,13 @@ var tryout= [
       {index: 4, time: "23:00"}
     ],
     intermediary= [
-      {index: 0, datetime: "3/17(四)"},
-      {index: 1, datetime: "3/18(五)"},
-      {index: 2, datetime: "3/19(六)"},
-      {index: 3, datetime: "3/20(日)"},
-      {index: 4, datetime: "3/21(一)"},
-      {index: 5, datetime: "3/22(二)"},
-      {index: 6, datetime: "3/23(三)"},
-      {index: 7, datetime: "3/24(四)"}
+      {index: 0, datetime: "12/10(六)"},
+      {index: 1, datetime: "12/11(日)"},
+      {index: 2, datetime: "12/12(一)"},
+      {index: 3, datetime: "12/13(二)"},
+      {index: 4, datetime: "12/14(三)"},
+      {index: 5, datetime: "12/15(四)"},
+      {index: 6, datetime: "12/16(五)"}
     ],
     intermediary_times= [
       {index: 0, time: "19:00"},
