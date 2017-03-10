@@ -13,7 +13,8 @@ var gameList = [
   "英雄聯盟",
   "爐石戰記：魔獸英雄傳",
   "星海爭霸II：虛空之遺",
-  "AVA戰地之王",
+  //"AVA戰地之王",
+  "鬥陣特攻",
   "英雄聯盟-中路單挑"
 ];
 
@@ -343,7 +344,12 @@ router.post('/:id/kick', isLoggedIn, isAdmin, function(req, res) {
 });
 
 router.get('/:id/edit', isLoggedIn, isAdmin, function(req, res) {
-  var gameToName = ['英雄聯盟', '爐石戰記', '星海爭霸2-虛空之遺', 'AVA戰地之王' , '英雄聯盟-中路單挑'];
+  var gameToName = ['英雄聯盟',
+                    '爐石戰記',
+                    '星海爭霸2-虛空之遺',
+                    //'AVA戰地之王'
+                    '鬥陣特攻',
+                    '英雄聯盟-中路單挑'];
   res.render('team_edit', {
     user: req.user,
     team: req.authTeam,
@@ -487,7 +493,7 @@ function isAdmin(req, res, next) {
 }
 
 function priceCheck(gametype, price) {
-  var priceTable = [250, 50, 50, 250 , 50];
+  var priceTable = [500, 100, 100, 600 , 100];
   return priceTable[gametype] == price;
 }
 

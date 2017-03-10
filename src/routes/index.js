@@ -102,13 +102,14 @@ module.exports = function(passport) {
   });
   router.get('/rules/sc2', function(req, res) {
     res.render('rules_sc2', {
-      title: '大賽規則-星海爭霸2 虛空之遺',
+      title: '大賽規則-星海爭霸II 虛空之遺',
       user: req.user
     });
   });
   router.get('/rules/ava', function(req, res) {
     res.render('rules_ava', {
-      title: '大賽規則-A.V.A 戰地之王',
+      //title: '大賽規則-A.V.A. 戰地之王',
+      title: '大賽規則-OverWatch 鬥陣特攻',
       user: req.user
     });
   });

@@ -6,7 +6,7 @@ html(prefix="og: http://ogp.me/ns#" )
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
 
-    title 2016中央大學電競大賽   
+    title 2017中央大學電競大賽   
 
     // Facebook
     <meta property="og:title" content="中央大學電競大賽" />
@@ -20,6 +20,7 @@ html(prefix="og: http://ogp.me/ns#" )
 
     link(rel='stylesheet', type='text/css', href='/css/semantic.min.css')
     link(rel='stylesheet', type='text/css', href='/css/global.css')
+    link(rel='shortcut Icon', type='text/x-icon', href='/img/logo.png')
     block stylesheet
     script(src='/js/jquery-2.1.3.min.js')
     script(src='/js/semantic.min.js')
@@ -31,7 +32,7 @@ html(prefix="og: http://ogp.me/ns#" )
             .ui.menu
               a.header.item(href='/')
                 i.home.icon
-                = "Garena校際盃 爐石競技杯"
+                = "第七屆中央校園電競大賽"
               a.item(href='/announcement') 公告
               a.item(href='/competition') 賽事中心
               a.item(href='/participation_help') 報名須知
@@ -43,7 +44,8 @@ html(prefix="og: http://ogp.me/ns#" )
                   a.item(href='/rules/lols') 英雄聯盟-中路單挑大賽
                   a.item(href='/rules/hs') 爐石戰記
                   //a.item(href='/rules/sc2') 星海爭霸II：虛空之遺
-                  a.item(href='/rules/ava') A.V.A戰地之王
+                  //a.item(href='/rules/ava') A.V.A戰地之王
+                  a.item(href='/rules/ava') OverWatch鬥陣特攻
               a.item(href='/awards') 參賽獎勵
               a.item(href='/contact') 問題舉報
               a.item(href='/sponsors') 贊助商
@@ -76,7 +78,7 @@ html(prefix="og: http://ogp.me/ns#" )
                         //| 星海隊伍清單
                         a.item(href='/team/all/3')
                           i.users.icon
-                          | AVA隊伍清單
+                          | OverWatch隊伍清單
                         a.item(href='/team/all/4')
                           i.users.icon
                           | 中路單挑選手清單
@@ -100,6 +102,6 @@ html(prefix="og: http://ogp.me/ns#" )
                       a.hidden.content(href='/register') 衝一發
 
       block content
-    #footer.ui.inverted.footer.vertical.segment.site-footer 2016 © NCU CSIE E-Sports Game All Rights Reserved.
+    #footer.ui.inverted.footer.vertical.segment.site-footer 2017 © NCU CSIE E-Sports Game All Rights Reserved.
     script(src='/js/global.js')
     block javascript

@@ -70,42 +70,42 @@ block content
             else
               a.ui.right.floated.blue.button(href='/team/new?gametype=hs') 創立隊伍
      
-      .item
-        .image
-          img(src='/img/sc2_team.jpg')
-        .content
-          .header 星海爭霸2: 虛空之遺
-          .meta
-            span.cinema Starcraft 2: Legacy of the void
-          .description
-            if team.sc2 && (!user.local.sc2id || user.local.sc2id.length <= 0 || !user.local.sc2ladder || user.local.sc2ladder.length <= 0)
-              .ui.warning.message
-                | 請記得填寫遊戲相關資料，
-                a(href='/user/'+user.id+'/edit#sc2id') 前往設定
-            .ui.segment
-              if team.sc2
-                h4.ui.header= "隊伍名稱：" + team.sc2.name
-                h4.ui.header
-                  | 隊長：
-                  a.ui.blue.horizontal.label(href='/user/'+team.sc2.leader.id)= team.sc2.leader.local.name
-              else
-                | 尚未加入隊伍
-            if team.sc2
-             //a.ui.right.floated.green.button(href='/team/'+team.sc2.id+'/edit') 編輯隊伍
-             //a.ui.right.floated.button(href='/team/'+team.sc2.id) 隊伍公開頁面
-            else
-              //a.ui.right.floated.blue.button(href='/team/new?gametype=sc2') 創立隊伍
+      //.item
+      //  .image
+      //    img(src='/img/sc2_team.jpg')
+      //  .content
+      //    .header 星海爭霸2: 虛空之遺
+      //    .meta
+      //      span.cinema Starcraft 2: Legacy of the void
+      //    .description
+      //      if team.sc2 && (!user.local.sc2id || user.local.sc2id.length <= 0 || !user.local.sc2ladder || user.local.sc2ladder.length <= 0)
+      //        .ui.warning.message
+      //          | 請記得填寫遊戲相關資料，
+      //          a(href='/user/'+user.id+'/edit#sc2id') 前往設定
+      //      .ui.segment
+      //        if team.sc2
+      //          h4.ui.header= "隊伍名稱：" + team.sc2.name
+      //          h4.ui.header
+      //            | 隊長：
+      //            a.ui.blue.horizontal.label(href='/user/'+team.sc2.leader.id)= team.sc2.leader.local.name
+      //        else
+      //          | 尚未加入隊伍
+      //      if team.sc2
+      //       //a.ui.right.floated.green.button(href='/team/'+team.sc2.id+'/edit') 編輯隊伍
+      //       //a.ui.right.floated.button(href='/team/'+team.sc2.id) 隊伍公開頁面
+      //      else
+      //        //a.ui.right.floated.blue.button(href='/team/new?gametype=sc2') 創立隊伍
       
 
       .item
         .image
           img(src='/img/ava_team.jpg')
         .content
-          .header 戰地之王
+          .header 鬥陣特攻
           .meta
-            span.cinema AVA
+            span.cinema OverWatch
           .description
-            if team.ava && (!user.local.avaid || user.local.avaid.length <= 0 || !user.local.avagpid || user.local.avagpid.length <= 0 || !user.local.avauid || user.local.avauid.length <= 0)
+            if team.ava && (!user.local.avagpid || user.local.avagpid.length <= 0)
               .ui.warning.message
                 | 請記得填寫遊戲相關資料，
                 a(href='/user/'+user.id+'/edit#avaid') 前往設定
@@ -133,7 +133,7 @@ block content
                 a.ui.right.floated.red.button(href='/team/'+team.ava.id+'/unlink') 退出組隊
               a.ui.right.floated.button(href='/team/'+team.ava.id) 隊伍公開頁面
             else
-              a.ui.right.floated.blue.button(href='/team/new?gametype=ava') 創立隊伍
+              a.ui.right.floated.blue.button(href='/team/new?gametype=ow') 創立隊伍
 
       .item
         .image
