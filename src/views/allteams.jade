@@ -12,18 +12,14 @@ block content
           = "隊伍資料 - " + (i+1)
         h2.ui.header= "隊伍名稱：" + team.name
         h2.ui.header= "隊長：" + team.leader.local.name + "(" + team.leader.local.phone + ")"
-        if game == 1
-          h2.ui.header= "BattleTag: " + team.leader.local.hsid
-          h2.ui.header= "排名: " + team.leader.local.hsladder
-        //if game == 2
-          //h2.ui.header= "BattleTag: " + team.leader.local.sc2id
-          //h2.ui.header= "排名: " + team.leader.local.sc2ladder
-        if game == 4
+        
+        // LOL英雄聯盟
+        if game == 0
           h2.ui.header 基本資料表
           table.ui.celled.table
             thead
               tr
-                th department
+                th 系級
                 th 姓名
                 th Email
                 th 遊戲ID
@@ -39,52 +35,71 @@ block content
                 td= team.leader.local.lolid
                 td= team.leader.local.lolgpid
                 td= team.leader.local.loluid
-        if game == 0 || game == 3
+              each mem in team.member
+                tr
+                  td= departmentToName[mem.local.department] + gradeToName[mem.local.grade]
+                  td= mem.local.name
+                  td= mem.local.email
+                  td= mem.local.lolid
+                  td= mem.local.lolgpid
+                  td= mem.local.loluid
+        // 爐石戰記
+        if game == 1
+          h2.ui.header= "BattleTag: " + team.leader.local.hsid
+          h2.ui.header= "排名: " + team.leader.local.hsladder
+        //if game == 2
+          //h2.ui.header= "BattleTag: " + team.leader.local.sc2id
+          //h2.ui.header= "排名: " + team.leader.local.sc2ladder
+
+        // 鬥陣特攻
+        if game == 3
           h2.ui.header 基本資料表
           table.ui.celled.table
             thead
               tr
-                th department
+                th 系級
                 th 姓名
                 th Email
                 th BattleTag
                 th 競技模式階級
             tbody
-              if game == 0
+              tr
+                td= departmentToName[team.leader.local.department] + gradeToName[team.leader.local.grade]
+                td
+                  i.trophy.icon
+                  = team.leader.local.name
+                td= team.leader.local.email
+                td= team.leader.local.avaid
+                td= team.leader.local.avaladder
+              each mem in team.member
                 tr
-                  td= departmentToName[team.leader.local.department] + gradeToName[team.leader.local.grade]
-                  td
-                    i.trophy.icon
-                    = team.leader.local.name
-                  td= team.leader.local.email
-                  td= team.leader.local.lolid
-                  td= team.leader.local.lolgpid
-                  td= team.leader.local.loluid
-                each mem in team.member
-                  tr
-                    td= departmentToName[mem.local.department] + gradeToName[mem.local.grade]
-                    td= mem.local.name
-                    td= mem.local.email
-                    td= mem.local.lolid
-                    td= mem.local.lolgpid
-                    td= mem.local.loluid
-              if game == 3
-                tr
-                  td= departmentToName[team.leader.local.department] + gradeToName[team.leader.local.grade]
-                  td
-                    i.trophy.icon
-                    = team.leader.local.name
-                  td= team.leader.local.email
-                  td= team.leader.local.avagpid
-                  td= team.leader.local.avaladder
-                each mem in team.member
-                  tr
-                    td= departmentToName[mem.local.department] + gradeToName[mem.local.grade]
-                    td= mem.local.name
-                    td= mem.local.email
-                    td= mem.local.avagpid
-                    td= mem.local.avaladder
-                    
+                  td= departmentToName[mem.local.department] + gradeToName[mem.local.grade]
+                  td= mem.local.name
+                  td= mem.local.email
+                  td= mem.local.avaid
+                  td= mem.local.avaladder
+        // LOL 中路單挑
+        if game == 4
+          h2.ui.header 基本資料表
+          table.ui.celled.table
+            thead
+              tr
+                th 系級
+                th 姓名
+                th Email
+                th 遊戲ID
+                th 競時通帳號
+                th UID
+            tbody
+              tr
+                td= departmentToName[team.leader.local.department] + gradeToName[team.leader.local.grade]
+                td
+                  i.trophy.icon
+                  = team.leader.local.name
+                td= team.leader.local.email
+                td= team.leader.local.lolid
+                td= team.leader.local.lolgpid
+                td= team.leader.local.loluid
         //h2.ui.horizontal.header.divider
           //i.calendar.icon
           //| 初賽日期選擇
