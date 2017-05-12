@@ -12,11 +12,27 @@ var teamSchema = mongoose.Schema({
   intermediary: [Boolean],
 });
 
+/* origin code
+
 teamSchema.methods.isFull = function() {
   // lol, hs, sc, ava , lols
   // 0  , 1 , 2 , 3 , 4
   if ((this.game == 0 || this.game == 3) && this.member.length >= 5) 
     return "隊伍已經滿了";
+  if (this.game == 1 || this.game == 2 ||  this.game == 4)
+    return "only one player allowed";
+  return false;
+}
+
+*/
+
+// edit by JoNz94
+teamSchema.methods.isFull = function() {
+  // lol, hs, sc, ow, lols
+  // 0  , 1 , 2 , 3 , 4
+  if ((this.game == 0 && this.member.length >= 5) || (this.game == 3 && this.member.length >= 6)) 
+    return "隊伍已經滿了";
+  
   if (this.game == 1 || this.game == 2 ||  this.game == 4)
     return "only one player allowed";
   return false;

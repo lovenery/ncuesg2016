@@ -5,7 +5,7 @@ setInterval(function() {
   if (percentage >= 100) {
     percentage = 0;
     pic += 1;
-    if (pic >= 5) {
+    if (pic >= 4) {
       pic = 1;
     }
     document.getElementById('button-' + pic).checked = true;

@@ -1,63 +1,44 @@
-js-bson: Failed to load c++ bson extension, using pure JS version
-Tue, 21 Apr 2015 09:55:23 GMT express-session deprecated undefined resave option; provide resave option at app.js:38:9
-Tue, 21 Apr 2015 09:55:23 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:38:9
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-js-bson: Failed to load c++ bson extension, using pure JS version
-Mon, 27 Apr 2015 21:25:04 GMT express-session deprecated undefined resave option; provide resave option at app.js:38:9
-Mon, 27 Apr 2015 21:25:04 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:38:9
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-js-bson: Failed to load c++ bson extension, using pure JS version
-Thu, 30 Apr 2015 16:20:05 GMT express-session deprecated undefined resave option; provide resave option at app.js:38:9
-Thu, 30 Apr 2015 16:20:05 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:38:9
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
-Warning: missing space before text for line 63 of jade file "/sda5/jxcode/NCUESG/src/views/sponsors.jade"
+Wed, 22 Mar 2017 18:31:26 GMT express-session deprecated undefined resave option; provide resave option at app.js:38:9
+Wed, 22 Mar 2017 18:31:26 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:38:9
+Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/root/ncuesg2016/src/node_modules/express/lib/response.js:662:10)
+    at ServerResponse.send (/root/ncuesg2016/src/node_modules/express/lib/response.js:146:12)
+    at fn (/root/ncuesg2016/src/node_modules/express/lib/response.js:896:10)
+    at View.exports.renderFile [as engine] (/root/ncuesg2016/src/node_modules/jade/lib/jade.js:325:12)
+    at View.render (/root/ncuesg2016/src/node_modules/express/lib/view.js:76:8)
+    at Function.app.render (/root/ncuesg2016/src/node_modules/express/lib/application.js:527:10)
+    at ServerResponse.res.render (/root/ncuesg2016/src/node_modules/express/lib/response.js:900:7)
+    at /root/ncuesg2016/src/app.js:75:9
+    at Layer.handle_error (/root/ncuesg2016/src/node_modules/express/lib/router/layer.js:58:5)
+    at trim_prefix (/root/ncuesg2016/src/node_modules/express/lib/router/index.js:268:13)
+    at /root/ncuesg2016/src/node_modules/express/lib/router/index.js:237:9
+    at Function.proto.process_params (/root/ncuesg2016/src/node_modules/express/lib/router/index.js:312:12)
+    at /root/ncuesg2016/src/node_modules/express/lib/router/index.js:228:12
+    at Function.match_layer (/root/ncuesg2016/src/node_modules/express/lib/router/index.js:295:3)
+    at IncomingMessage.next (/root/ncuesg2016/src/node_modules/express/lib/router/index.js:189:10)
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.
+/root/ncuesg2016/src/views/index.jade, line 115:
+You should not have jade tags with multiple attributes.

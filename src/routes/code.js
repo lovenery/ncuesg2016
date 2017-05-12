@@ -14,6 +14,7 @@ router.get('/', isAdmin, function(req, res) {
   });
 });
 
+/* origin code
 router.get('/new/50', isAdmin, function(req, res) {
   var code = new Code();
   code.price = 50;
@@ -31,6 +32,36 @@ router.get('/new/250', isAdmin, function(req, res) {
   code.save();
   res.redirect('/code');
 });
+*/
+
+//--- edit by JoNz94
+router.get('/new/100', isAdmin, function(req, res) {
+  var code = new Code();
+  code.price = 100;
+  code.created = new Date();
+  code.used = false;
+  code.save();
+  res.redirect('/code');
+});
+
+router.get('/new/500', isAdmin, function(req, res) {
+  var code = new Code();
+  code.price = 500;
+  code.created = new Date();
+  code.used = false;
+  code.save();
+  res.redirect('/code');
+});
+
+router.get('/new/600', isAdmin, function(req, res) {
+  var code = new Code();
+  code.price = 600;
+  code.created = new Date();
+  code.used = false;
+  code.save();
+  res.redirect('/code');
+});
+//---
 
 router.get('/print', isAdmin, function(req, res) {
   Code.find({'used': false}).sort({price: 'asc'}).exec(function(err, codes) {

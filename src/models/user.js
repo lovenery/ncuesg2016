@@ -20,8 +20,9 @@ var userSchema = mongoose.Schema({
     sc2id: String,
     sc2ladder: String,
     avaid: String,
-    avagpid: String,
-    avauid: String,
+    //avagpid: String,
+    //avauid: String,
+    avaladder: String,
     created: Date,
     updated: {type: Date, default: Date.now}
   },

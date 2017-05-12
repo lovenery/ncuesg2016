@@ -1,2 +1,5 @@
 node_modules
 public/uploads
+err.log
+out.log
+nohup.out
